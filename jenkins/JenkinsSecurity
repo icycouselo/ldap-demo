@@ -1,16 +1,14 @@
 pipeline {
-    agent any 
-    stages {
-        stage('Stage 1') {
-            steps {
-                echo 'Does this work?' 
-            }
-        }
-         stage('Newman') {
-            steps {
-                echo "${env.WORKSPACE} "
-                echo "${env.WORKSPACE} "
+    agent any
 
+    environment {
+        API_TEST_COLLECTIONS = 'security/postman/testcollection_v1.json'
+    }     
+
+    stages {
+         stage('API Tests') {
+            steps {
+                sh "newman run ${env.WORKSPACE}/$API_TEST_COLLECTIONS"
             }
         }       
     }
