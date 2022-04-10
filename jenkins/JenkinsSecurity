@@ -6,9 +6,9 @@ pipeline {
                 echo 'Does this work?' 
             }
         }
-         stage('NVM') {
+         stage('NPM') {
             steps {
-                sh 'nvm -v' 
+                sh 'npm -v' 
             }
         }       
     }
