@@ -6,5 +6,10 @@ pipeline {
                 echo 'Does this work?' 
             }
         }
+         stage('NVM') {
+            steps {
+                sh 'nvm -v' 
+            }
+        }       
     }
 }
