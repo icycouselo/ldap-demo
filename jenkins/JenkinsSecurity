@@ -6,9 +6,11 @@ pipeline {
                 echo 'Does this work?' 
             }
         }
-         stage('NPM') {
+         stage('Newman') {
             steps {
-                sh 'npm -v' 
+                echo "${env.WORKSPACE} "
+                echo "${env.WORKSPACE} "
+
             }
         }       
     }
